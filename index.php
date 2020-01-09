@@ -65,20 +65,16 @@ class Payer extends Person{
 
 // Stamp
 
-    $person = new Persona("Mattia", "Vena");
+    $person = new Person("Mattia", "Vena");
 
     echo "CLASSE PERSONA <br><br>" . $person;
     echo "<br><br> --------------------- <br><br>";
 
-    $guest = new Ospite("Mattia", "Vena", 1993);
+    $guest = new Guest("Mattia", "Vena", 1993);
 
     echo "CLASSE OSPITE <br><br>" . $guest;
     echo "<br><br> --------------------- <br><br>";
 
-    $payer = new Pagante("Mattia", "Vena", "Via le mani dal naso 69");
+    $payer = new Payer("Mattia", "Vena", "Via le mani dal naso 69");
 
     echo "CLASSE PAGANTE <br><br>" . $payer;
-
-
-
-?>
