@@ -1,13 +1,12 @@
 /* TODO TODAY:
 
-       - Definire la classe Persona caratterizzata da nome e cognome;
-       - Definire la classe Ospite (che eredita da Persona) caratterizzata da nome, cognome e anno di nascita;
-       - Definire la classe Pagante (che eredita da Persona) caratterizzata da nome, cognome e indirizzo (di residenza);
-       - Per ogni classe definire costruttore e toString in maniera appropriata, eventualmente richiamando i metodi della classe padre;
+    - Definire la classe Persona caratterizzata da nome e cognome;
+    - Definire la classe Ospite (che eredita da Persona) caratterizzata da nome, cognome e anno di nascita;
+    - Definire la classe Pagante (che eredita da Persona) caratterizzata da nome, cognome e indirizzo (di residenza);
+    - Per ogni classe definire costruttore e toString in maniera appropriata, eventualmente richiamando i metodi della classe padre;
 
-       - Eseguire dei test, istanziando ogni classe definita e testando la correttezza dei risultati attesi
+    - Eseguire dei test, istanziando ogni classe definita e testando la correttezza dei risultati attesi
    */
-
 
 <?php
 
@@ -50,22 +49,36 @@ class Guest extends Person{
 class Payer extends Person{
 
   public $residentialAddress
-  public $billingAddress
 
-  function __construct($name, $lastname, $residentialAddress, $billingAddress){
+  function __construct($name, $lastname, $residentialAddress,){
 
     parent:: __construct($name, $lastname)
 
       $this -> residentialAddress = $residentialAddress;
-      $this -> billingAddress = $billingAddress;
   }
 
   function __toString(){
 
-    return parent::__toString()."<br> Residential address :".$this-> residentialAddress
-                               ."<br> Billing address :".$this-> billingAddress;
+    return parent::__toString()."<br> Residential address :".$this-> residentialAddress;
   }
 }
+
+// Stamp
+
+    $person = new Persona("Mattia", "Vena");
+
+    echo "CLASSE PERSONA <br><br>" . $person;
+    echo "<br><br> --------------------- <br><br>";
+
+    $guest = new Ospite("Mattia", "Vena", 1993);
+
+    echo "CLASSE OSPITE <br><br>" . $guest;
+    echo "<br><br> --------------------- <br><br>";
+
+    $payer = new Pagante("Mattia", "Vena", "Via le mani dal naso 69");
+
+    echo "CLASSE PAGANTE <br><br>" . $payer;
+
 
 
 ?>
