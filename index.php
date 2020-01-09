@@ -19,6 +19,21 @@ function __toString(){
 }
 
 
+class Guest extends Person{
 
+  public $yearOfBirth;
+
+  function __construct($name, $lastname, $yearOfBirth){
+
+    parent:: __construct($name, $lastname)
+
+      $this -> yearOfBirth = $yearOfBirth;
+  }
+
+  function __toString(){
+
+    return parent::__toString()."<br> Year of Birth :".$this-> yearOfBirth;
+  }
+}
 
 ?>
